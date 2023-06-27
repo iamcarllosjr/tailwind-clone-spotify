@@ -1,20 +1,33 @@
-import { Shuffle, SkipBack, PlayIcon, SkipForward, Repeat, Mic2, LayoutList, Laptop2, Volume, Maximize2 } from 'lucide-react'
+import { Shuffle, SkipBack, PlayIcon, SkipForward, Repeat, Mic2, LayoutList, Laptop2, Volume, Maximize2, Heart } from 'lucide-react'
 import Image from 'next/image';
 import Album from "../../../public/album.png";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-between bg-zinc-900 border-t border-zinc-700 px-6 py-3">
+    <footer className="flex items-center gap-10 md:justify-between bg-zinc-900 border-t border-zinc-700 px-6 py-3">
         <div className="flex items-center gap-3">
           <Image src={Album} alt="" width={56} height={56}></Image>
-        <div className="flex flex-col">
+        <div className="flex gap-2 md:flex-col items-center md:items-start">
           <strong className="font-normal">Rope</strong>
           <span className="text-xs text-xinc-400">Foo Fighters</span>
         </div>
+
+        <div className="flex md:hidden items-center gap-2">
+            <span className="text-xs text-zinc-400">0:31</span>
+            <div className="h-1 rounded-full w-36 bg-zinc-600">
+              <div className="bg-zinc-200 w-12 h-1 rounded-full"></div>
+            </div>
+            <span className="text-xs text-zinc-400">2:14</span>
+        <div className="flex md:hidden items-center gap-2">
+          <Heart size={20} />
+          <PlayIcon size={20} />
+        </div>
+           </div>
         </div>
 
+
         <div className="flex flex-col items-center gap-2">
-           <div className="flex items-center gap-3">
+           <div className="items-center gap-3 hidden md:flex">
             <Shuffle size={20} className="text-zinc-200"/>
             <SkipBack className="text-zinc-200"/>
             <button className="w-10 h-10 flex items-center justify-center pl-1 rounded-full bg-white text-black">
@@ -24,7 +37,7 @@ const Footer = () => {
             <Repeat size={20} className="text-zinc-200"/>
            </div>
 
-           <div className="flex items-center gap-2">
+           <div className="hidden md:flex items-center gap-2">
             <span className="text-xs text-zinc-400">0:31</span>
             <div className="h-1 rounded-full w-96 bg-zinc-600">
               <div className="bg-zinc-200 w-24 h-1 rounded-full"></div>
@@ -33,7 +46,7 @@ const Footer = () => {
            </div>
         </div>
       
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <Mic2 size={20}/>
           <LayoutList size={20}/>
           <Laptop2 size={20}/>
